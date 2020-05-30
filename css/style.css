@@ -1,0 +1,750 @@
+@charset "UTF-8";
+
+/*◆共通◆*/
+
+.header-wrapper{
+	color: #ffffff; /* フォントの色を指定する */
+	font-size: x-large;
+}
+
+html, body{
+	height:100%;
+}
+
+
+.contents{
+	width: 100%; /* コンテンツの横幅を指定する */
+	overflow: auto; /* コンテンツの表示を自動に設定（スクロール） */
+}
+
+p.text{
+	align: center;
+	font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+	color: #2a2a2a;
+	font-size: 12pt;
+	line-height: 1.5em;
+}
+
+
+/*ボタン設定*/
+button{
+	font-size:1.4em;
+	width: 250px;
+	margin: 10px;
+}
+
+.button-wrapper {
+	text-align: center;
+}
+
+/*◆タイトル画面◆*/
+
+.header_index{
+	position: fixed; /* ヘッダーを固定する */
+	top: 0; /* 上部から配置の基準位置を決める */
+	left: 0; /* 左から配置の基準位置を決める */
+	width: 100%; /* ヘッダーの横幅を指定する */
+	height: 35px; /* ヘッダーの高さを指定する */
+	padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+	background-color: black; /* ヘッダーの背景色を指定する */
+}
+body.title{
+	background: #FFF;
+}
+
+/*タイトルロゴ*/
+.titlelogo{
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	animation: anime1 2s ease;
+	height: auto;
+	max-width: 70%;
+}
+
+/*タイトルロゴアニメ*/
+@keyframes anime1 {
+    0% {
+        opacity:  0;                /* 透明度指定 */
+        top: 50px;                  /* 位置指定 */
+    }
+    100% {
+        opacity:  1;                /* 透明度指定 */
+        top: 0;                     /* 位置指定 */
+    }
+}
+
+.story {
+	background: gray;
+	margin: 60px;
+}
+
+/*タイトル画面＿丸いボタン*/
+.btn_circle{
+  display: inline-block;
+  text-decoration: none;
+  background: #FF9900;
+  color: #FFFD80;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+.btn_circle:hover {
+	background: #FFF;
+	color: #FF9900;
+}
+
+/* ◆【①】main（メニュー）画面◆*/
+
+.header_main{
+	position: fixed; /* ヘッダーを固定する */
+	top: 0; /* 上部から配置の基準位置を決める */
+	left: 0; /* 左から配置の基準位置を決める */
+	width: 100%; /* ヘッダーの横幅を指定する */
+	height: 35px; /* ヘッダーの高さを指定する */
+	padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+	background-color: black; /* ヘッダーの背景色を指定する */
+	z-index: 99;
+}
+
+.body_main{
+	margin: 20px 10px 10px 0px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	height: 40px;
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/watermark_y.png);
+	background-size: cover;
+	background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center;                     /* 画像の表示位置を指定  */
+	background-attachment: fixed;
+}
+
+.menu_title{
+	text-align: center;
+	background-image:
+}
+
+.menu{/*MENU画像*/
+	position: relative;
+	display: inline-block;
+	margin: 20px auto;
+	position: relative;
+	height: 100px;
+	text-align:center;
+	z-index:10;
+}
+
+.menu_cat{/*ゴブリンキャット画像*/
+	position: absolute;
+	display: inline-block;
+	animation: cat_menu_anime 2s linear infinite;
+  	transform-origin: 50% 50%;
+  	margin: 1rem 0 !important;
+  	left: 20%;
+  	top: 30px;
+  	z-index:100;
+}
+
+@keyframes cat_menu_anime {
+  0% { transform: translateY(0) }
+  33.33333% { transform: translateY(-15px) }
+  66.66667% { transform: translateY(0) }
+  100% { transform: translateY(0) }
+}
+
+.menu_mouse{/*ネズミ画像*/
+	position: absolute;
+	display: inline-block;
+	animation: mouse_menu_anime 10s linear infinite;
+  	transform-origin: 50% 50%;
+  	margin: 1rem 0 !important;
+	z-index:5;
+	left: 67%;
+	top:70px;
+}
+
+@keyframes mouse_menu_anime {
+  0% { transform: translateX(0) }
+  33.33333% { transform: translateX(-50px) }
+  66.66667% { transform: translateX(0) }
+  100% { transform: translateY(0) }
+}
+
+.box_menu_outside {/*メニューボックス外側*/
+    padding: 0.5em 1em;
+    margin: 20px auto;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-image: url(../img/wood.jpg);
+    background-repeat: repeat;
+    max-width: 700px;
+}
+
+.box_menu {/*メニューボックス*/
+    padding: 0.5em 1em;
+    margin: 0px auto;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-color: #FFF;
+    max-width: 600px;
+    text-align:center;
+}
+
+.box_menu .box_title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #FFC107;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+.fontawesome{
+	color:orange;
+}
+
+.menu_p{
+	align: center;
+	font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+	color: #220000;
+	font-size: 24px;
+}
+}
+/*-----------<↓　ゲームフロー画面　↓>-------------------*/
+
+/* ◆【②】Standby.jsp（キャラクター選択）◆*/
+
+.header_lobby{
+	position: fixed; /* ヘッダーを固定する */
+	top: 0; /* 上部から配置の基準位置を決める */
+	left: 0; /* 左から配置の基準位置を決める */
+	width: 100%; /* ヘッダーの横幅を指定する */
+	height: 35px; /* ヘッダーの高さを指定する */
+	padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+	background-color: black; /* ヘッダーの背景色を指定する */
+}
+
+
+.box_cheese{/* チーズボックス*/
+	padding: 20px;
+	margin: 0 auto;
+
+	width: 700px;
+	border-radius: 10px;/*角の丸み*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: orange;
+
+	background-image: url(../img/cheese.jpg);
+	background-size:150px 150px;
+	background-repeat: repeat;
+}
+.body_standby {
+	margin: 20px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/watermark_b.png);
+	background-size: cover;
+	background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center; /* 画像の表示位置を指定  */
+    background-attachment: fixed;
+    text-align:center;
+}
+
+.box_standby {
+    padding: 2em 1em;
+    margin: 20px auto;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-color: #FFF;
+    max-width: 600px;
+    text-align:center;
+}
+
+.box_standby p {
+	margin: 0;
+    padding: 0;
+}
+
+
+.table_standby{/*キャラクター選択画面テーブル*/
+	border-collapse: separate;
+	border-spacing: 5px;
+	width: 600px;
+	text-align: center;
+}
+
+.table_standby td{
+	background-color: #fff;
+  	border:solid 1px #fff;
+  	border-radius: 10px;
+}
+
+td{vartical-align:middle;}
+td img{display: inline-block;vertical-align: middle;}
+
+.torimidashi{
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	z-index: -1;
+	text-align: center;
+	<!--吹き出しイラスト https://frame-illust.com/?p=9998 -->
+}
+/* ◆【③】Standbyok.jsp（キャラクター確認）◆*/
+
+/* ◆【④】nextuser.jsp（ワード・印象）◆*/
+.header_game{
+	position: fixed; /* ヘッダーを固定する */
+	top: 0; /* 上部から配置の基準位置を決める */
+	left: 0; /* 左から配置の基準位置を決める */
+	width: 100%; /* ヘッダーの横幅を指定する */
+	height: 35px; /* ヘッダーの高さを指定する */
+	padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+	background-color: maroon; /* ヘッダーの背景色を指定する */
+	color: white; /* フォントの色を指定する */
+}
+
+.body_word {
+	margin: 20px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/watermark_r.png);
+	background-size: cover;
+	background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center;                     /* 画像の表示位置を指定  */
+    text-align:center;
+}
+
+.box_pop4{/* カラフルストライプボックス*/
+	padding: 20px;
+	margin: 0 auto;
+
+	width: 700px;
+	border-radius: 10px;/*角の丸み*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: orange;
+
+	background-image: url(../img/y_block.png);
+	background-size:150px 150px;
+	background-repeat: repeat;
+}
+.box_word {
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 0px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    text-align:center;
+    width: auto;
+    text-align:center;
+}
+
+.box_word p {
+	margin: 0;
+    padding: 0;
+}
+
+/* ◆【⑤】game.jsp（ゲーム）◆*/
+.body_game {
+	margin: 20px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/watermark_r.png);
+	background-size: cover;
+	background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center; /* 画像の表示位置を指定  */
+    background-attachment: fixed;
+    text-align:center;
+    color: white;
+}
+
+.box_timer{
+	padding: 2em 1em;
+    margin: 0px auto;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-image: url(../img/metalblack.jpg);
+    max-width: 400px;
+}
+
+
+
+.box_game {
+    padding: 2em 1em;
+    margin: 0px auto;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-color: #FFF;
+    max-width: 700px;
+    text-align:center;
+}
+
+/* ◆【⑥】result.jsp（結果）◆*/
+
+.body_result {
+	margin: 20px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/watermark_3.png);
+	background-size: cover;
+	background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center; /* 画像の表示位置を指定  */
+    background-attachment: fixed;
+    text-align:center;
+}
+
+.box_wood{
+	padding: 20px;
+	margin: 0 auto;
+
+	width: 700px;
+	border-radius: 10px;/*角の丸み*/
+	border-style: solid;
+	border-width: 1px;
+
+	background-image: url(../img/wood.jpg);
+	background-size:150px 150px;
+	background-repeat: repeat;
+}
+
+.box_result {
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 0px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    text-align:center;
+    width: auto;
+}
+
+.box_result p {
+	margin: 0;
+    padding: 0;
+}
+
+.winpic{
+	margin: 0 auto;
+	max-width: 600px;
+}
+/*-----------<↓　ゲームフロー外画面　↓>-------------------*/
+
+/*-----------<↓　共通(others)　↓>-------------------*/
+
+.header_others{
+	position: fixed; /* ヘッダーを固定する */
+	top: 0; /* 上部から配置の基準位置を決める */
+	left: 0; /* 左から配置の基準位置を決める */
+	width: 100%; /* ヘッダーの横幅を指定する */
+	height: 35px; /* ヘッダーの高さを指定する */
+	padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+	background-color: #4682B4; /* ヘッダーの背景色を指定する */
+	color: white; /* フォントの色を指定する */
+}
+
+.body_others {
+	margin: 20px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/watermark_r.png);
+	background-size: cover;
+	background-repeat:  repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center;                     /* 画像の表示位置を指定  */
+}
+
+.box_others {
+    padding: 0.5em 1em;
+    margin: 20px 100px 20px 100px;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-color: #FFF;
+}
+
+.fontawesome2{
+	color:lightblue;
+}
+
+.close{
+	text-align: center;
+	margin: 20px 0;
+}
+
+/* ranking（ランキング）画面*/
+
+.body_ranking {
+	margin: 20px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/ranking.png);
+	background-size: cover;
+	background-repeat:  repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center;                     /* 画像の表示位置を指定  */
+    background-attachment: fixed;
+}
+
+.box_ranking {
+    padding: 0.5em 1em;
+    margin: 0px auto;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-color: #FFF;
+    max-width: 700px;
+}
+.rankingtitle{
+	display: block;
+	margin: 20px 0 30px 0;
+	position: relative;
+	text-align: center;
+}
+
+
+.capybara{/*カピバラ画像*/
+	position: absolute;
+	display: inline-block;
+	animation: cat_menu_anime 2s linear infinite;
+  	transform-origin: 50% 50%;
+  	margin: 1rem 0 !important;
+  	left: 73%;
+  	top: 10px;
+  	z-index:100;
+
+}
+
+@keyframes capybara {
+  0% { transform: translateY(0) }
+  33.33333% { transform: translateY(-10px) }
+  66.66667% { transform: translateY(0) }
+  100% { transform: translateY(0) }
+}
+
+.table_ranking{
+	font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+	font-size: 1em;
+	color: #1b0b05;
+}
+/* howtoplay（遊び方）画面*/
+
+.body_howtoplay {
+	margin: 20px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/sky.jpg);
+	background-size: cover;
+	background-repeat:  repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center;                     /* 画像の表示位置を指定  */
+    background-attachment: fixed;
+}
+
+.box_how-wrapper{
+	margin: 0px auto;
+}
+
+.box_howtoplay {
+    padding: 0.5em 1em;
+    margin:0 auto;
+/*    margin: 0px 100px 20px 100px;  */
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-color: #FFF;
+    max-width: 700px;
+    display: block
+}
+
+.mincyo {
+	font-family: "メイリオ";
+}
+
+.howtitle{
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	text-align:center;
+}
+
+.how_midashi{
+	color: #4682b4;/*文字色*/
+	margin: 1px;
+  	padding: 0.4em 0;/*上下の余白*/
+  	border-top: solid 2px #4682b4;/*上線*/
+  	border-bottom: solid 2px #4682b4;/*下線*/
+  	width:100px;
+  	font-family: "メイリオ";
+}
+
+.nagare{
+	text-align: center;
+}
+/* character（キャラクター）画面*/
+
+.body_character{
+	margin: 20px; /* bodyの外側の余白を指定する */
+	padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+	background-image: url(../img/haikei2_m.png);
+	background-size: 108%;
+	background-repeat:  repeat;                         /* 画像の繰り返しを指定  */
+    background-position:center center;                     /* 画像の表示位置を指定  */
+    background-attachment: fixed;
+}
+
+.box_character {
+    padding: 0.5em 1em;
+    margin: 0px auto;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-color: #FFF;
+    max-width: 900px;
+    text-align: center;
+
+}
+.box_character h1{
+	text-align: center;
+
+}
+
+.box_character2 {
+    padding: 0.5em 1em;
+    margin: 0px auto;
+    font-weight: bold;
+    /*color: #6091d3;/*文字色*/
+    background: #FFF;
+    border-radius: 10px;/*角の丸み*/
+    background-color: #FFF;
+    max-width: 900px;
+    text-align: center;
+    height: 280px;
+}
+
+.box_story{
+	text-align: left;
+	height: 300px;
+}
+
+.ribbon5 {
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 18px;/*文字サイズ*/
+  background: #00c48d;/*背景色*/
+  color: #FFF;/*文字色*/
+  box-sizing: border-box;
+}
+.ribbon5 h3 {
+  margin: 0;
+  padding: 0 30px 0 15px;
+  border-top: dashed 1px #FFF;
+  border-bottom: dashed 1px #FFF;
+  line-height: 46px;
+}
+
+.ribbon5:after {
+  position: absolute;
+  content: '';
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 0px;
+  height: 0px;
+  border-width: 30px 15px 30px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+}
+
+.mousehouse{
+	opacity: 0.7;
+}
+/* キャラクター説明ポップアップ。三木さん*/
+#chara_container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.chara_part{
+		display: flex;
+		align-items: flex-end;
+
+
+}
+
+.pic {
+	width: 245;
+	height: auto;
+	overflow: hidden;
+	margin:	10px 8px 10px 16px;
+	position:	relative;
+}
+.pic .caption {
+	font-size: 100%;
+	color: #333333;
+	text-align: center;
+	padding-top: 1em;
+	padding-left: 1em;
+}
+
+
+.pic .mask {
+	width:			100%;
+	height:			auto;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	background-color:	rgba(0,255,0,0.5);
+	-webkit-transition:	all 0.4s ease;
+	transition:		all 0.4s ease;
+	-webkit-transform:	scale(0);	/* 大きさを０にして表示しない */
+	transform:		scale(0);
+}
+.pic:hover .mask {
+	-webkit-transform:	scale(1);	/* 大きさを１にして表示する */
+	transform:		scale(1);
+}
+
+/*キャラクター説明ここまで*/
+

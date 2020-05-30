@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+table{
+  width: 80%;
+  border-collapse: collapse;
+  border-spacing: 1;
+  background-color: white;
+  margin: 20px auto;
+}
+
+
+table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table tr:hover{
+  background-color: #d4f0fd;
+}
+
+table th,table td{
+  text-align: center;
+  width: 14%;
+  padding: 10px 0;
+}
+
+.rankribbon1{
+	border-radius: 10px 0 0 10px; /*色の部分の角丸・左側*/
+}
+
+.rankribbon2{
+	border-radius: 0 10px 10px 0;/*色の部分の角丸・右側*/
+}
